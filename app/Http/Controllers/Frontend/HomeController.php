@@ -38,10 +38,11 @@ class HomeController extends Controller
         $inputs = $request->post();
         try {
             $this->contactRepository->store($inputs);
-            return view('frontend.contact')->with(["status"=>"success", "message"=>"Votre message a été envoyé avec succès"]);
+
+            return response()->json(["t"=> "2", "message"=>"Message envoyé avec succès!"]);
         }catch (Exception $e){
             //dd($e->getMessage());
-            return view('frontend.contact')->with(["status"=>"failure", "message"=>"Une erreur s'est produite"]);
+            return  response()->json(["t"=> "1", "message"=>"Une erreur s'est produite!"]);
         }
 
     }

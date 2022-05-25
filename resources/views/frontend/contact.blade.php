@@ -93,9 +93,16 @@
                 </div>
                 <!-- /.col-md-4 -->
                 <div class="col-md-8">
+                    @include('components.alert')
                     <div class="contact-froms">
                         <form action="{{route('contact.infos')}}" method="POST" class="contact-form"
-                              data-pixsaas="contact-froms">
+                              data-pixsaas="contact-froms" id="submit-form">
+                            <div class="row">
+                                <div class="form-result alert" style="width:97%;">
+                                    <button type="button" class="close" data-dismiss="alert">×</button> 
+                                    <div class="content"></div>
+                                </div>
+                            </div><br>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -121,18 +128,12 @@
 
                             <textarea name="message" placeholder="Votre message" required></textarea>
 
-                            <button type="submit" class="pix-btn submit-btn">
+                            <button type="submit" class="pix-btn submit-btn" id="submit-btn">
                                 <span class="btn-text">Envoyez votre message</span>
                                 <i class="fas fa-spinner fa-spin"></i>
                             </button>
                             <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 
-
-                            <div class="row">
-                                <div class="form-result alert">
-                                    <div class="content"></div>
-                                </div>
-                            </div>
                         </form>
                         <!-- /.contact-froms -->
                     </div>
@@ -145,15 +146,14 @@
         <!-- /.container -->
     </section>
     <!-- /.contactus -->
+@endsection
 
-    <!--========================-->
-    <!--=         Map         =-->
-    <!--========================-->
-    <section id="google-maps">
-        <div class="google-map">
-            <div class="gmap3-area" data-lat="40.712776" data-lng="-74.005974" data-mrkr="{{asset('frontend/assets/img/map-marker.png')}}">
+@section('js')
+    <script>
+        $('.submit-form').submit(function(){
+            alert('in');
+            this.reset();
+        });
 
-            </div>
-        </div><!-- /.google-map -->
-    </section><!-- /#google-maps -->
+    </script>
 @endsection
