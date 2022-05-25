@@ -1,0 +1,25 @@
+ Features already implemented / integrated
+ 
+	 * Translation module
+	 * Authentification (jetstream, livewire)
+	 * Real time notification (node js module and pusher-php-server)
+	 * Api configuration. Login and Registration already done!
+	 * Subscription module (laravel cahier see documentation for usage or contact me!)
+	 * Form captcha integrated (see documentation for usage or contact me!) 	
+	 * Socialite social media login integrated (see documentation for usage or contact me!) 	
+ 
+	
+	1) Configure database as in the .env file
+
+	2) Execute "php artisan migrate"
+
+	3) Execute composer install (This step is the install all dependences in the package.json and all associated laravel files.
+
+	4) Enjoy coding!!!
+
+
+By Chopgwe Leonard Alah
+@CLA Technologies
+alahconsulting@gmail.com
+Donate MoMo: 674365378
+	
