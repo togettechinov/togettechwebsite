@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ if (array_key_exists($segment, config('languages'))) {
 
     //Frontend routes
     Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'welcome'])->name('welcome');
-    Route::get('/contact', [App\Http\Controllers\Frontend\HomeController::class, 'contact'])->name('contact');
+    Route::get('/home/contact', [App\Http\Controllers\Frontend\HomeController::class, 'contact'])->name('contact-home');
     Route::post('/contact-infos', [App\Http\Controllers\Frontend\HomeController::class, 'contactStore'])->name('contact.infos');
 
 
@@ -35,10 +37,15 @@ if (array_key_exists($segment, config('languages'))) {
 			dd('dsfdfs');
 			return view('dashboard');
 		});*/
+   
 
 // Auth group route
     Route::middleware(['auth:sanctum'])->group(function () {
+        Route::group(['prefix' => 'admin'], function () {
 
+            Route::resource('contacts', ContactController::class);
+            Route::get('dashboard', [DashboardController::class , 'index'])->name('dashboard');
+        });
 
     });
 

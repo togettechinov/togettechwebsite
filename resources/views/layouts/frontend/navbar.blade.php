@@ -43,15 +43,15 @@
                             <a href="#">Projets</a>
 
                             <ul class="sub-menu">
-                                <li><a href="#">Ajarke</a></li>
-                                <li><a href="#l">Toget Hoster</a></li>
-                                <li><a href="#">Toget Suite</a></li>
-                                <li><a href="#">Tourdé OS</a></li>
-                                <li><a href="#">Toget School</a></li>
+                                <li><a href="https://ajarke.com" target ="_blank">Ajarke</a></li>
+                                <li><a href="https://togethoster.togettechinov" target ="_blank">Toget Hoster</a></li>
+                                <li><a href="https://crm.togettechinov.com/" target ="_blank">Toget Suite</a></li>
+                                <li><a href="https://tourde.togettechinov.com" target ="_blank">Tourdé OS</a></li>
+                                <li><a href="https://polytech.togettechinov.com" target ="_blank">Toget School</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <li><a href="{{route('contact-home')}}">Contact</a></li>
                     </ul>
 
                     <div class="nav-right">

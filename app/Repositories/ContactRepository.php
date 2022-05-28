@@ -22,4 +22,8 @@ class ContactRepository extends ResourceRepository{
         $this->model = $contact;
     }
 
+    public function getAll(){
+        return $this->model->orderBy('created_at', 'desc')->get();
+    }
+
 }
